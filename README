@@ -1,0 +1,29 @@
+Use as follows:
+
+1. Download casters: https://github.com/vivekpathak/casters
+2. Use virtualenv as follows:
+
+    virtualenv $(pwd)/env
+    source env/bin/activate
+
+3. Install couchdb
+
+    pip install couchdb
+
+4. Link casters to virtualenv
+
+    ln -s path/to/casters-repo/casters.py env/bin/casters.py 
+
+5. (Optionally) run CouchDB on a Docker container:
+
+    docker run -d --name couchdb -p 5984:5984 -v ./couch_data:/usr/local/var/lib/couchdb:z klaemo/couchdb
+
+6. Push to couchdb
+
+    cd path/to/this/repo
+    casters.py push http://admin:secret@localhost:5984/databasename/_design/simple
+
+7. Done.
+
+Additionally, _attachments should be a folder to put the statics (htmls and so on) but that will go on another repo, soon.
+
