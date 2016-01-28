@@ -1,0 +1,9 @@
+
+<h3>Hello world {{ homeCtrl }}</h3>
+
+<ul>
+<li ng-repeat="match in homeCtrl.matches"
+    ng-click="$state.go('matches.detail', { id: match._id }">
+  {{ match }}
+</li>
+</ul>

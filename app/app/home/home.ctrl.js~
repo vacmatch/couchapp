@@ -1,0 +1,18 @@
+(function () {
+  'use strict';
+
+  angular.module('app.home')
+    .controller('HomeCtrl', HomeCtrl);
+
+  HomeCtrl.$inject = ['$scope', '$http'];
+  
+  function HomeCtrl($scope, $http) {
+
+    $http.get('http://localhost:5984/vacmatch/_design/simple/_view/matches_summary?group=true').success(function(data) {
+      $scope.matches = data;
+    });
+
+    $scope.orderProp = 'created';
+
+  }
+}());
