@@ -5,6 +5,13 @@ function(doc) {
   if(typeof doc.type !== "undefined") {
     if(doc.type == 'match') {
       emit([doc._id, 0], doc);
+
+      // This makes sure there always exists the key
+      // but it adds one spurious additional document
+      emit([doc._id, doc.teams[0], 'goal'], null);
+      emit([doc._id, doc.teams[0], 'foul'], null);
+      emit([doc._id, doc.teams[1], 'goal'], null);
+      emit([doc._id, doc.teams[1], 'foul'], null);
     }
     else if(doc.type == 'event') {
       emit([doc.match, doc.team, doc.eventType, doc.date], { "_id": doc._id });
