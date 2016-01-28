@@ -3,7 +3,7 @@
 
 <ul>
 <li ng-repeat="(key, match) in matches"
-    ng-click="$state.go('matches.detail', { id: key }">
+    ng-click="$state.go('matches.detail', key)">
   
   {{key}}: {{ match["0"].teams[0] }} {{ match[match["0"].teams[0]]["goal"] || 0 }} - {{ match[match["0"].teams[1]]["goal"] || 0 }} {{ match["0"].teams[1] }}
 </li>

@@ -1,14 +1,15 @@
 (function () {
-  'use strict'; 
-  
+  'use strict';
+
   var dependencies = [
     'ngMaterial',
     'templates',
+    'pouchdb',
     'app.home',
     'app.posts',
     'app.post'
   ];
-   
+
   angular.module('app', dependencies)
     .config(config)
     .run(run);
