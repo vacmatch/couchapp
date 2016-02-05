@@ -106,7 +106,7 @@
     $scope.changes.on('change', onEventsChange);
     $scope.changes.on('error', function (err) { console.log('PouchDB changes error:', err); });
 
-      //var changesRsrc = $resource('http://localhost:5984/vacmatch/_changes?filter=simple/events&query=goals,fouls');
+      //var changesRsrc = $resource('http://localhost:5984/vacmatch/_changes?filter=simple/events&query=goal,foul');
 
 
     $scope.orderProp = 'created';
